@@ -1,0 +1,69 @@
+---
+import HamburgerButton from "./HamburgerButton.astro";
+import NavLink from "./NavLink.astro";
+import NavLinkResponsive from "./NavLinkResponsive.astro";
+import StripedDivider from "../dividers/StripedDivider.astro";
+import Header from "../Header.astro";
+---
+
+<nav>
+  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+    <div class="relative flex items-center justify-between">
+      <div class="inset-y-0 left-0 flex items-center md:hidden">
+        <HamburgerButton />
+      </div>
+    </div>
+  </div>
+  <div class="hidden md:block">
+    <StripedDivider />
+    <ul class="mt-4 flex justify-between md:px-20 xl:px-40">
+      <a
+        href="#"
+        class="bg-my-primary rounded-md px-3 py-2 text-sm font-medium text-white"
+        aria-current="page">Accueil</a
+      >
+      <NavLink link="Services" />
+      <NavLink link="À propos" />
+      <NavLink link="Fiscalité" />
+      <NavLink link="Aides" />
+      <NavLink link="Charte" />
+      <NavLink link="Tarifs" />
+    </ul>
+    <StripedDivider />
+  </div>
+  <div class="md:hidden" id="mobile-menu">
+    <div class="space-y-1 px-2 pb-3 pt-2">
+      <a
+        href="#"
+        class="bg-my-primary block rounded-md px-3 py-2 text-base font-medium text-white"
+        aria-current="page">Accueil</a
+      >
+      <NavLinkResponsive link="Services" />
+      <NavLinkResponsive link="À propos" />
+      <NavLinkResponsive link="Fiscalité" />
+      <NavLinkResponsive link="Aides" />
+      <NavLinkResponsive link="Charte" />
+      <NavLinkResponsive link="Tarifs" />
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuButton = document.querySelector(
+    '[aria-controls="mobile-menu"]',
+  );
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.setAttribute("aria-expanded", "false");
+    mobileMenu.style.display = "none";
+
+    mobileMenuButton.addEventListener("click", function () {
+      const isExpanded =
+        mobileMenuButton.getAttribute("aria-expanded") === "true";
+
+      mobileMenuButton.setAttribute("aria-expanded", String(!isExpanded));
+      mobileMenu.style.display = isExpanded ? "none" : "block";
+    });
+  }
+</script>
