@@ -1,0 +1,15 @@
+---
+import "@fontsource/oswald";
+
+interface Props {
+  link: string;
+}
+
+const { link } = Astro.props;
+---
+
+<a
+  href="#"
+  class="text-my-primary hover:bg-my-secondary whitespace-nowrap rounded-md px-3 py-2 text-base font-medium hover:text-white"
+  >{link}</a
+>
