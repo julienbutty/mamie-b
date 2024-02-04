@@ -1,5 +1,46 @@
-<div>
-  <div class="bg-[linear-gradient(to_right_bottom,rgba(20,29,89,0.85),rgba(255,255,255,0)),url('../../public/hero.png')] h-[44rem] w-full bg-cover">
-    <h1 class="text-white text-5xl">Besoin d'une aide à la personne sur Lyon et sa région ?</h1>
+---
+import { Image } from "astro:assets";
+import Logo from "../assets/logo-subtitle.svg";
+---
+
+<div class="flex justify-center md:pt-10 lg:pt-28">
+  <Image src={Logo} class="w-4/5 md:w-1/2" alt="Astro logo" />
+</div>
+<div
+  class="fixed inset-x-0
+       bottom-0 border-t-4
+       border-my-secondary bg-my-background
+       p-4
+       text-center
+       text-3xl
+       text-white md:hidden"
+>
+  <div class="flex justify-center">
+    <button
+      class="animate-pulse rounded-full bg-my-primary px-4 py-2 text-base text-white"
+    >
+      Faites votre demande
+    </button>
+  </div>
+</div>
+<div class="hidden md:block">
+  <div class="flex justify-center pt-20">
+    <div class="md:w-4/5">
+      <hr
+        class="border-top border-wid border-2 border-solid border-my-secondary opacity-20"
+      />
+      <h2
+        class="pt-10 text-center text-base text-my-secondary md:text-2xl lg:text-3xl"
+      >
+        Besoin d'une aide à la personne sur Lyon et sa région ?
+      </h2>
+      <div class="flex justify-center pt-5">
+        <button
+          class="rounded-full bg-my-primary px-3 py-1 text-white hover:bg-my-secondary md:px-4 md:py-2 md:font-bold"
+        >
+          Contactez-nous
+        </button>
+      </div>
+    </div>
   </div>
 </div>

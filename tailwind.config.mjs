@@ -7,7 +7,10 @@ export default {
       colors: {
         "my-primary": "#722536",
         "my-secondary": "#EB6767",
-        "my-background": "#ffecce",
+        // "my-background": "#ffecce",
+        // "my-background": "#ececec",
+        "my-background": "#fffcf8",
+        // "my-background": "#fff8e8",
       },
     },
   },
