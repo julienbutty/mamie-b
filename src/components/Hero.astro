@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Logo from "../assets/logo-subtitle.svg";
 ---
 
-<div class="flex justify-center md:pt-10 lg:pt-28">
+<div class="relative z-20 flex justify-center md:pt-10 lg:pt-28">
   <Image src={Logo} class="w-4/5 md:w-1/2" alt="Astro logo" />
 </div>
 <div
@@ -23,11 +23,11 @@ import Logo from "../assets/logo-subtitle.svg";
     </button>
   </div>
 </div>
-<div class="hidden md:block">
+<div class="relative z-10 hidden md:block">
   <div class="flex justify-center pt-20">
     <div class="md:w-4/5">
       <hr
-        class="border-top border-wid border-2 border-solid border-my-secondary opacity-20"
+        class="border-top border-2 border-solid border-my-secondary opacity-20"
       />
       <h2
         class="pt-10 text-center text-base text-my-secondary md:text-2xl lg:text-3xl"
