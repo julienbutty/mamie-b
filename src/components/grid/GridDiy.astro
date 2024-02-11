@@ -1,0 +1,15 @@
+---
+import DIY from "../../assets/illustrations/diy.svg";
+import { Image } from "astro:assets";
+---
+
+<div
+  class="relative col-span-2 min-h-72 rounded-lg bg-grid-diy shadow-xl hover:animate-pulse hover:cursor-pointer hover:border-2 hover:border-solid hover:border-my-secondary hover:shadow-2xl"
+>
+  <div
+    class="lex-row flex h-full items-end justify-between p-6 font-bold text-white md:text-xl lg:text-2xl"
+  >
+    <Image src={DIY} class="absolute bottom-1 right-5 z-0 w-2/4" alt="DIY" />
+    <span class="relative z-10">Tâches ne pouvant plus être effectuées</span>
+  </div>
+</div>

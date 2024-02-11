@@ -1,0 +1,15 @@
+---
+import { Image } from "astro:assets";
+import Shopping from "../../assets/illustrations/shopping.svg";
+---
+
+<div
+  class="min-h-72 rounded-lg bg-grid-grocery shadow-xl hover:animate-pulse hover:cursor-pointer hover:border-2 hover:border-solid hover:border-my-secondary hover:shadow-2xl"
+>
+  <div
+    class="items-left flex h-full flex-col justify-end p-6 font-bold text-white md:text-xl lg:text-2xl"
+  >
+    <Image src={Shopping} class="w-2/5" alt="Grocery" />
+    <span class="pt-3">Service de livraison de courses</span>
+  </div>
+</div>
