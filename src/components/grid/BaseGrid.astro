@@ -1,0 +1,23 @@
+---
+import GridCar from "../grid/GridCar.astro";
+import GridShopping from "../grid/GridShopping.astro";
+import GridChildren from "../grid/GridChildren.astro";
+import GridDiy from "../grid/GridDiy.astro";
+import GridGuard from "../grid/GridGuard.astro";
+import GridAdministrative from "../grid/GridAdministrative.astro";
+import GridPet from "../grid/GridPet.astro";
+---
+
+<div class="flex items-center justify-center pt-24">
+  <div class="md:w-11/12 lg:w-3/5">
+    <div class="grid grid-flow-dense grid-cols-2 gap-x-3 gap-y-4">
+      <GridCar />
+      <GridShopping />
+      <GridChildren />
+      <GridDiy />
+      <GridGuard />
+      <GridAdministrative />
+      <GridPet />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+---
+import Guard from "../../assets/illustrations/guard.svg";
+import { Image } from "astro:assets";
+---
+
+<div
+  class="max-h-72 rounded-lg bg-grid-guard shadow-xl hover:animate-pulse hover:cursor-pointer hover:border-2 hover:border-solid hover:border-my-secondary hover:shadow-2xl"
+>
+  <div
+    class="flex h-full flex-col items-start justify-end p-6 font-bold text-white md:text-xl lg:text-2xl"
+  >
+    <Image src={Guard} class="w-8/12" alt="Guard" />
+    <span class="pt-3">Vigilance temporaire du domicile</span>
+  </div>
+</div>
