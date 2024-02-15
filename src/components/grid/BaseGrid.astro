@@ -8,16 +8,18 @@ import GridAdministrative from "../grid/GridAdministrative.astro";
 import GridPet from "../grid/GridPet.astro";
 ---
 
-<div class="flex items-center justify-center pt-24">
-  <div class="md:w-11/12 lg:w-3/5">
-    <div class="grid grid-flow-dense grid-cols-2 gap-x-3 gap-y-4">
-      <GridCar />
-      <GridShopping />
-      <GridChildren />
-      <GridDiy />
-      <GridGuard />
-      <GridAdministrative />
-      <GridPet />
+<div class="hidden md:block">
+  <div class="flex items-center justify-center pt-24">
+    <div class="md:w-11/12 lg:w-3/5">
+      <div class="grid grid-flow-dense grid-cols-2 gap-x-3 gap-y-4">
+        <GridCar />
+        <GridShopping />
+        <GridChildren />
+        <GridDiy />
+        <GridGuard />
+        <GridAdministrative />
+        <GridPet />
+      </div>
     </div>
   </div>
 </div>

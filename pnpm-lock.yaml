@@ -11,6 +11,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^5.1.0
     version: 5.1.0(astro@4.2.6)(tailwindcss@3.4.0)
+  '@fontsource/baloo-2':
+    specifier: ^5.0.18
+    version: 5.0.18
   '@fontsource/oswald':
     specifier: ^5.0.18
     version: 5.0.18
@@ -632,6 +635,10 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@fontsource/baloo-2@5.0.18:
+    resolution: {integrity: sha512-+oIGQOocp1o7dfm5Be75wVVe9IeU5m+CcCDrnRR+p2EXN/meCCvJFtoMo/Q5tLdNtz7FRMe/yzy9NN+p88IsRg==}
+    dev: false
 
   /@fontsource/oswald@5.0.18:
     resolution: {integrity: sha512-aOOszKjb1GZGlAgCk4BsOx/r/235jTtKvkd85PypHJCFWf/a0Hf4bWMq17XhjFghICrK30wV2TNAAAFaoPggMQ==}

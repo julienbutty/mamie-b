@@ -1,0 +1,15 @@
+---
+import Car from "../../../assets/illustrations/car.svg";
+import { Image } from "astro:assets";
+---
+
+<div
+  class="col-span-2 h-56 rounded-lg bg-grid-car shadow-xl hover:animate-pulse hover:cursor-pointer hover:border-2 hover:border-solid hover:border-my-secondary hover:shadow-2xl"
+>
+  <div
+    class="flex h-full flex-col items-center justify-end p-3 font-bold text-white md:text-xl lg:text-2xl"
+  >
+    <Image src={Car} alt="Car" />
+    <span class="pt-3">Service d'accompagnement véhicule et / ou autres</span>
+  </div>
+</div>

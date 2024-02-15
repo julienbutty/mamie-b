@@ -2,13 +2,14 @@
 import { Image } from "astro:assets";
 import Logo from "../assets/logo.svg";
 import BlobHero from "../components/blobs/BlobHero.astro";
+import '@fontsource/baloo-2';
 ---
 
 <div class="relative z-20 flex justify-center md:pt-10 lg:pt-28">
   <Image src={Logo} class="z-30 w-4/5 md:w-1/2" alt="Astro logo" />
   <BlobHero />
 </div>
-<div
+<!-- <div
   class="fixed inset-x-0
        bottom-0 border-t-4
        border-my-secondary bg-my-background
@@ -24,18 +25,19 @@ import BlobHero from "../components/blobs/BlobHero.astro";
       Faites votre demande
     </button>
   </div>
-</div>
-<div class="relative z-20 hidden md:block">
+</div> -->
+<!-- <div class="relative z-20 hidden md:block"> -->
+<div class="relative z-20 ">
   <div class="flex justify-center pt-20">
     <div class="md:w-4/5">
       <hr
         class="border-top border-2 border-solid border-my-secondary opacity-20"
       />
-      <h2
-        class="pt-10 text-center text-base text-my-secondary md:text-2xl lg:text-3xl"
+      <p
+        class="pt-20 hero-font text-center text-3xl text-my-secondary md:text-2xl lg:text-4xl"
       >
         Besoin d'une aide à la personne sur Lyon et sa région ?
-      </h2>
+      </p>
       <div class="flex justify-center pt-5">
         <button
           class="rounded-full bg-my-primary px-3 py-1 text-white hover:bg-my-secondary md:px-4 md:py-2 md:font-bold"
@@ -46,3 +48,8 @@ import BlobHero from "../components/blobs/BlobHero.astro";
     </div>
   </div>
 </div>
+<style>
+ .hero-font {
+    font-family: 'Baloo 2', sans-serif;
+ } 
+</style>
