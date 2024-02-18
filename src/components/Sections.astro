@@ -1,0 +1,66 @@
+---
+import SectionBadge from "../components/dividers/SectionBadge.astro";
+import SectionHeadingHighlighted from "../components/dividers/SectionHeadingHighlighted.astro";
+import SectionTitleSmall from "../components/dividers/SectionTitleSmall.astro";
+import SectionWrapper from "../components/dividers/SectionWrapper.astro";
+import { Icon } from "astro-icon/components";
+
+const features = [
+  {
+    title: "Fiscalité",
+    description: "Conseils fiscaux et déclarations simplifiées",
+    icon: "fiscalite",
+  },
+  {
+    title: "Aides",
+    description: "Aides d'État disponibles pour vous",
+    icon: "aide",
+  },
+  {
+    title: "Tarifs",
+    description: "Des tarifs compétitifs et transparents",
+    icon: "tarifs",
+  },
+  {
+    title: "Chartes",
+    description: "Nos engagements et nos valeurs",
+    icon: "charte",
+  },
+];
+---
+
+<div id="features" class="scroll-mt-8 py-8 lg:py-16">
+  <SectionWrapper>
+    <SectionHeadingHighlighted>
+      <SectionBadge>Nos accompagnements</SectionBadge>
+
+      <SectionTitleSmall>
+        Découvrez nos services complémentaires : fiscalité, aides d'État,
+        chartes et tarifs avantageux.
+      </SectionTitleSmall>
+    </SectionHeadingHighlighted>
+    <div class="mt-8 lg:mt-16">
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-y-16">
+        {
+          features.map((feature) => (
+            <div class="transition-all duration-[--duration]">
+              <div class="flex items-center">
+                <div class="rounded border border-white/5 bg-white/5 p-1">
+                  <Icon
+                    name={feature.icon}
+                    class="h-5 w-5 fill-white/10 text-my-primary"
+                  />
+                </div>
+                <div class="ml-4 text-lg text-my-primary">{feature.title}</div>
+              </div>
+
+              <div class="ml-11 mt-2 pl-0.5 text-sm font-light leading-relaxed text-my-secondary">
+                {feature.description}
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </SectionWrapper>
+</div>

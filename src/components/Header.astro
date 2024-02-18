@@ -1,7 +1,107 @@
 ---
-import NavBar from "./nav/NavBar.astro";
+// Importation des composants
+import SectionWrapper from "../components/dividers/SectionWrapper.astro";
+import StripedDivider from "../components/dividers/StripedDivider.astro";
+import HamburgerButton from "./nav/HamburgerButton.astro";
+
+const links = [
+  {
+    title: "Services",
+    url: "#services",
+  },
+  {
+    title: "À propos",
+    url: "#a-propos",
+  },
+  {
+    title: "Fiscalité",
+    url: "#fiscalité",
+  },
+  {
+    title: "Aides",
+    url: "#aides",
+  },
+  {
+    title: "Charte",
+    url: "#charte",
+  },
+  {
+    title: "Tarifs",
+    url: "#tarifs",
+  },
+];
 ---
 
-<header>
-  <NavBar />
-</header>
+<div
+  class="fixed inset-x-0 top-0 z-50 mb-3 bg-my-primary/30 pb-3 backdrop-blur-lg"
+>
+  <div class="hidden md:block">
+    <StripedDivider />
+  </div>
+  <SectionWrapper>
+    <header>
+      <nav class="flex items-center justify-between py-4">
+        <!-- logo -->
+
+        <div class="hidden flex-1 items-center justify-between md:flex">
+          {
+            links.map((link) => (
+              <a
+                href={link.url}
+                class="mx-4 inline-block text-base text-white transition hover:text-my-secondary"
+              >
+                {link.title}
+              </a>
+            ))
+          }
+        </div>
+        <button
+          type="button"
+          id="menu-button"
+          class="relative ml-auto inline-flex md:hidden"
+        >
+          <!-- <HamburgerButton
+          class={`h-6 w-6 transition duration-500 ${showMenu ? 'rotate-180 opacity-0' : ''}`} /> -->
+          <HamburgerButton showMenu="showMenu" />
+        </button>
+      </nav>
+    </header>
+
+    <div class="hidden py-4 md:hidden" id="menu">
+      <ul class="flex flex-col items-center space-y-4">
+        {
+          links.map((link) => (
+            <li class="menu-item">
+              <a
+                href={link.url}
+                class="inline-block text-base font-medium text-white/75 transition hover:text-white"
+              >
+                {link.title}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </SectionWrapper>
+  <div class="hidden md:block">
+    <StripedDivider />
+  </div>
+</div>
+<script>
+  function toggleMenu() {
+    console.log("etst");
+    const menu = document.getElementById("menu");
+    if (menu) {
+      menu.classList.toggle("hidden");
+    }
+  }
+  const menuButton = document.getElementById("menu-button");
+  const links = document.querySelectorAll(".menu-item");
+  links.forEach((link) => {
+    link.addEventListener("click", toggleMenu);
+  });
+  if (menuButton) {
+    menuButton.addEventListener("click", toggleMenu);
+  }
+</script>

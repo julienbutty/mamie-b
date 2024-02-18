@@ -1,55 +1,78 @@
 ---
+import SectionWrapper from "../components/dividers/SectionWrapper.astro";
+import SectionHeadingHighlighted from "./dividers/SectionHeadingHighlighted.astro";
+import DotPattern from "../components/effects/DotPattern.astro";
 import { Image } from "astro:assets";
-import Logo from "../assets/logo.svg";
-import BlobHero from "../components/blobs/BlobHero.astro";
-import '@fontsource/baloo-2';
+import Logo from "../../public/logo-subtitle.svg";
+import "@fontsource/baloo-2";
 ---
 
-<div class="relative z-20 flex justify-center md:pt-10 lg:pt-28">
-  <Image src={Logo} class="z-30 w-4/5 md:w-1/2" alt="Astro logo" />
-  <BlobHero />
-</div>
-<!-- <div
-  class="fixed inset-x-0
-       bottom-0 border-t-4
-       border-my-secondary bg-my-background
-       p-4
-       text-center
-       text-3xl
-       text-white md:hidden"
->
-  <div class="flex justify-center">
-    <button
-      class="animate-pulse rounded-full bg-my-primary px-4 py-2 text-base text-white"
-    >
-      Faites votre demande
-    </button>
+<div class="relative pt-20 md:pt-36">
+  <div
+    class="pointer-events-none absolute inset-0 bg-center bg-grid-my-secondary/20 bg-grid-16 [mask-image:radial-gradient(white,transparent_85%)]"
+  >
   </div>
-</div> -->
-<!-- <div class="relative z-20 hidden md:block"> -->
-<div class="relative z-20 ">
-  <div class="flex justify-center pt-20">
-    <div class="md:w-4/5">
-      <hr
-        class="border-top border-2 border-solid border-my-secondary opacity-20"
-      />
-      <p
-        class="pt-20 hero-font text-center text-3xl text-my-secondary md:text-2xl lg:text-4xl"
-      >
-        Besoin d'une aide à la personne sur Lyon et sa région ?
-      </p>
-      <div class="flex justify-center pt-5">
-        <button
-          class="rounded-full bg-my-primary px-3 py-1 text-white hover:bg-my-secondary md:px-4 md:py-2 md:font-bold"
+
+  <SectionWrapper class="py-8 lg:py-16">
+    <SectionHeadingHighlighted>
+      <div class="flex flex-col items-center justify-center">
+        <div class="relative mx-auto mt-8 w-full max-w-5xl lg:mt-16">
+          <div
+            class="absolute -top-8 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-rose-400/15 blur-3xl lg:-top-8 lg:h-[32rem] lg:w-[32rem] lg:blur-[128px]"
+          >
+          </div>
+
+          <div class="relative w-full">
+            <DotPattern
+              size="32"
+              radius="1.5"
+              offset-x="0"
+              offset-y="0"
+              class="absolute inset-0 h-full w-full fill-my-primary/50 [mask-image:radial-gradient(white,transparent_85%)]"
+            />
+
+            <Image
+              alt="App screenshot"
+              class="h-auto w-full rounded-xl"
+              src={Logo}
+            />
+          </div>
+        </div>
+        <!-- title -->
+        <h1
+          class="mt-20 text-center font-display text-3xl font-light leading-tight text-my-primary lg:text-5xl"
         >
-          Contactez-nous
-        </button>
+          Vous recherchez
+
+          <br />
+
+          un service d'aide à domicile
+          <span
+            class="bg-gradient-to-br from-grid-diy/60 to-grid-guard bg-clip-text text-transparent"
+            >autour de Lyon ?</span
+          >
+        </h1>
+
+        <!-- subtitle -->
+        <h2
+          class="mt-8 max-w-xl text-center text-lg text-my-secondary lg:text-xl"
+        >
+          Confiez vos besoins à notre équipe expérimentée. Simplifiez votre
+          quotidien dès aujourd'hui
+        </h2>
+
+        <!-- cta -->
+        <div
+          class="mt-8 flex flex-col items-center justify-center gap-4 lg:flex-row"
+        >
+          <a
+            href="#"
+            class="inline-block rounded-full bg-my-primary px-4 py-1.5 text-sm font-medium text-white transition duration-300 hover:bg-my-secondary"
+          >
+            Contactez-nous
+          </a>
+        </div>
       </div>
-    </div>
-  </div>
+    </SectionHeadingHighlighted>
+  </SectionWrapper>
 </div>
-<style>
- .hero-font {
-    font-family: 'Baloo 2', sans-serif;
- } 
-</style>
