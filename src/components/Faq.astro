@@ -1,0 +1,88 @@
+---
+import SectionBadge from "../components/dividers/SectionBadge.astro";
+import SectionDescription from "../components/dividers/SectionDescription.astro";
+import SectionHeading from "../components/dividers/SectionHeading.astro";
+import SectionTitle from "../components/dividers/SectionTitle.astro";
+import SectionWrapper from "../components/dividers/SectionWrapper.astro";
+import SimpleDivider from "./dividers/SimpleDivider.astro";
+
+const questions = [
+  {
+    title: "Quels sont les services d'aide à domicile que vous proposez ?",
+    content:
+      "Nous offrons une gamme de services d'aide à domicile adaptés aux besoins des familles, y compris l'aide aux tâches ménagères, l'assistance aux personnes âgées ou handicapées, la garde d'enfants, le soutien aux courses, et même la compagnie pour des moments de détente ou de loisirs.",
+  },
+  {
+    title:
+      "Comment puis-je savoir si votre service d'aide à domicile est adapté aux besoins de ma famille ?",
+    content:
+      "Avant de commencer, nous organisons une rencontre initiale avec vous et votre famille pour discuter de vos besoins spécifiques et de la manière dont nous pouvons y répondre. Nous personnalisons nos services en fonction de vos préférences et de votre emploi du temps, pour vous offrir une assistance sur mesure.",
+  },
+  {
+    title: "Comment sont sélectionnés et formés vos aides à domicile ?",
+    content:
+      "Nous accordons une importance primordiale à la qualité de nos aides à domicile. Chaque membre de notre équipe est soigneusement sélectionné en fonction de son expérience, de ses compétences et de ses valeurs. De plus, nous fournissons une formation continue pour garantir qu'ils sont bien préparés à répondre aux besoins variés de nos clients.",
+  },
+  {
+    title:
+      "Comment fonctionne la tarification de vos services d'aide à domicile ?",
+    content:
+      "Notre tarification est transparente et adaptée à vos besoins spécifiques. Nous proposons des options de tarification flexibles, que ce soit à l'heure, à la journée ou selon un forfait mensuel, en fonction des services requis. Nous serons heureux de discuter avec vous des différentes options et de trouver celle qui convient le mieux à votre budget et à vos besoins.",
+  },
+];
+---
+
+<SimpleDivider />
+<SectionWrapper id="faq" class="mt-20 scroll-mt-8">
+  <SectionHeading>
+    <div class="mt-12"></div>
+    <SectionBadge>Questions ?</SectionBadge>
+
+    <SectionTitle>Foire aux questions</SectionTitle>
+
+    <SectionDescription>
+      Retrouvez les questions les plus fréquemment posées par nos clients.
+      <br class="hidden lg:block" />
+      Pour plus d'info ou pour toute autre question, n'hésitez pas à nous contacter.
+    </SectionDescription>
+  </SectionHeading>
+
+  <ul
+    class="mx-auto mt-20 w-fit max-w-2xl divide-y rounded-xl shadow shadow-my-secondary"
+  >
+    {
+      questions.map((question) => (
+        <li>
+          <details class="group">
+            <summary class="flex items-center gap-3  px-4 py-3 font-medium marker:content-none hover:cursor-pointer">
+              <svg
+                class="h-5 w-5 text-gray-500 transition group-open:rotate-90"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                />
+              </svg>
+              <span class="text-my-primary">{question.title}</span>
+            </summary>
+
+            <article class="px-4 pb-4">
+              <p class="text-my-primary">{question.content}</p>
+            </article>
+          </details>
+        </li>
+      ))
+    }
+  </ul>
+</SectionWrapper>
+<style>
+  /* Masquer les styles par défaut des navigateurs mobiles */
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>

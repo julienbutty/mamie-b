@@ -1,0 +1,19 @@
+---
+
+---
+
+<div
+  class="before:bg-[radial-gradient(var(--spotlight-size)_circle_at_var(--x)_var(--y),var(--spotlight-color-stops))]': mode ==
+      'before', 'after:absolute after:bg-[radial-gradient(var(--spotlight-size)_circle_at_var(--x)_var(--y),var(--spotlight-color-stops))]':
+    mode == 'after',
+      relative transform-gpu overflow-hidden
+  before:absolute before:inset-0 after:inset-0"
+  style="{
+        '--x': '0px',
+        '--y': '0px',
+        '--spotlight-color-stops': 'rgba(255,255,255,0.8), null, transparent',
+        '--spotlight-size': '350px',
+  }"
+>
+  <slot />
+</div>
