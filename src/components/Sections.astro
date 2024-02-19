@@ -47,24 +47,49 @@ const features = [
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-y-16">
         {
           features.map((feature) => (
-            <div class="transition-all duration-[--duration]">
-              <div class="flex items-center">
-                <div class="rounded border border-white/5 bg-white/5 p-1">
-                  <Icon
-                    name={feature.icon}
-                    class="h-5 w-5 fill-white/10 text-my-primary"
-                  />
+            <a href="#">
+              <div class="transition-all duration-[--duration]">
+                <div class="flex items-center">
+                  <div class="rounded border border-white/5 bg-white/5 p-1">
+                    <Icon
+                      name={feature.icon}
+                      class="h-5 w-5 fill-white/10 text-my-primary"
+                    />
+                  </div>
+                  <div class="link-underline link-underline-black ml-4 text-lg text-my-primary">
+                    {feature.title}
+                  </div>
                 </div>
-                <div class="ml-4 text-lg text-my-primary">{feature.title}</div>
-              </div>
 
-              <div class="ml-11 mt-2 pl-0.5 text-sm font-light leading-relaxed text-my-secondary">
-                {feature.description}
+                <div class=" ml-11 mt-2 pl-0.5 text-sm font-light leading-relaxed text-my-secondary">
+                  {feature.description}
+                </div>
               </div>
-            </div>
+            </a>
           ))
         }
       </div>
     </div>
   </SectionWrapper>
 </div>
+<style>
+  .link-underline {
+    border-bottom-width: 0;
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#fff, #fff);
+    background-size: 0 3px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease-in-out;
+  }
+
+  .link-underline-black {
+    background-image: linear-gradient(transparent, transparent),
+      linear-gradient(#f2c, #f2c);
+  }
+
+  .link-underline:hover {
+    background-size: 100% 3px;
+    background-position: 0 100%;
+  }
+</style>
