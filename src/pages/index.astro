@@ -5,13 +5,14 @@ import BaseMobileGrid from "../components/grid/BaseMobileGrid.astro";
 import Sections from "../components/Sections.astro";
 import Testimonials from "../components/Testimonials.astro";
 import Faq from "../components/Faq.astro";
-import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
 ---
 
-<Layout title="Welcome to Astro." />
-<BaseGrid />
-<BaseMobileGrid />
-<Sections />
-<Testimonials />
-<Faq />
-<Footer />
+<Layout title="Welcome to Astro.">
+  <Hero />
+  <BaseGrid />
+  <BaseMobileGrid />
+  <Sections />
+  <Testimonials />
+  <Faq />
+</Layout>

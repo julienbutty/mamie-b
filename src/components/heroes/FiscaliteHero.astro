@@ -1,0 +1,70 @@
+---
+import SectionWrapper from "../../components/dividers/SectionWrapper.astro";
+import SectionHeadingHighlighted from "../dividers/SectionHeadingHighlighted.astro";
+import DotPattern from "../../components/effects/DotPattern.astro";
+import { Image } from "astro:assets";
+import Logo from "../../../public/assets/logo.svg";
+import "@fontsource/baloo-2";
+---
+
+<div class="relative pt-20 md:pt-36">
+  <div
+    class="pointer-events-none absolute inset-0 bg-center bg-grid-my-secondary/20 bg-grid-16 [mask-image:radial-gradient(white,transparent_85%)]"
+  >
+  </div>
+
+  <SectionWrapper class="py-8 lg:py-16">
+    <SectionHeadingHighlighted>
+      <div class="flex flex-col items-center justify-center">
+        <div class="relative mx-auto mt-8 w-full max-w-5xl lg:mt-16">
+          <div
+            class="absolute -top-8 left-1/2 h-64 w-64 -translate-x-1/2 rounded-full bg-rose-400/15 blur-3xl lg:-top-8 lg:h-[32rem] lg:w-[32rem] lg:blur-[128px]"
+          >
+          </div>
+
+          <div class="relative w-full">
+            <DotPattern
+              size="32"
+              radius="1.5"
+              offset-x="0"
+              offset-y="0"
+              class="absolute inset-0 h-full w-full fill-my-primary/50 [mask-image:radial-gradient(white,transparent_85%)]"
+            />
+
+            <Image
+              alt="App screenshot"
+              class="h-auto w-full rounded-xl"
+              src={Logo}
+            />
+          </div>
+        </div>
+        <!-- title -->
+        <h1
+          class="mt-20 text-center font-display text-3xl font-light leading-tight text-my-primary lg:text-5xl"
+        >
+          Fiscalité
+        </h1>
+
+        <!-- subtitle -->
+        <h2
+          class="mt-8 max-w-xl text-center text-lg text-my-secondary lg:text-xl"
+        >
+          Tout ce que vous devez savoir sur la fiscalité lié au domaine du
+          service à la personne.
+        </h2>
+
+        <!-- cta -->
+        <div
+          class="mt-8 flex flex-col items-center justify-center gap-4 lg:flex-row"
+        >
+          <a
+            href="#"
+            class="inline-block rounded-full bg-my-primary px-4 py-1.5 text-sm font-medium text-white transition duration-300 hover:bg-my-secondary"
+          >
+            Contactez-nous
+          </a>
+        </div>
+      </div>
+    </SectionHeadingHighlighted>
+  </SectionWrapper>
+</div>

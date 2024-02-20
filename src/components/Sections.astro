@@ -12,21 +12,25 @@ const features = [
     title: "Fiscalité",
     description: "Conseils fiscaux et déclarations simplifiées",
     icon: "fiscalite",
+    link: "/mamie-b/fiscalite",
   },
   {
     title: "Aides",
     description: "Aides d'État disponibles pour vous",
     icon: "aide",
+    link: "/mamie-b/aides",
   },
   {
     title: "Tarifs",
     description: "Des tarifs compétitifs et transparents",
     icon: "tarifs",
+    link: "/mamie-b/tarifs",
   },
   {
-    title: "Chartes",
+    title: "Charte",
     description: "Nos engagements et nos valeurs",
     icon: "charte",
+    link: "/mamie-b/charte",
   },
 ];
 ---
@@ -39,15 +43,15 @@ const features = [
       <SectionBadge>Nos accompagnements</SectionBadge>
 
       <SectionTitleSmall>
-        Découvrez nos services complémentaires : fiscalité, aides d'État,
-        chartes et tarifs avantageux.
+        Découvrez nos services complémentaires : fiscalité, aides d'État, charte
+        et tarifs avantageux.
       </SectionTitleSmall>
     </SectionHeadingHighlighted>
     <div class="mt-8 lg:mt-16">
       <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-y-16">
         {
           features.map((feature) => (
-            <a href="#">
+            <a href={feature.link}>
               <div class="transition-all duration-[--duration]">
                 <div class="flex items-center">
                   <div class="rounded border border-white/5 bg-white/5 p-1">
